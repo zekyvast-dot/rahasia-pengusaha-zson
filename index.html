@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahasia Pengusaha</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:linear-gradient(135deg,
+  #0b1220,
+  #0f766e,
+  #38bdf8);
+  color:#f8fafc;
+}
+
+/* HEADER */
+header{
+  padding:30px 20px;
+  text-align:center;
+}
+header h1{color:#6ee7b7}
+header p{color:#cbd5e1}
+
+/* MENU */
+#menu{
+  padding:30px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+}
+.card{
+  background:rgba(255,255,255,.1);
+  border-radius:18px;
+  padding:26px;
+  cursor:pointer;
+  transition:.4s;
+  border:1px solid rgba(255,255,255,.15);
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  background:rgba(255,255,255,.18);
+}
+.card i{
+  font-size:40px;
+  color:#38bdf8;
+}
+.card h3{
+  margin:12px 0 0;
+  font-size:17px;
+}
+
+/* PAGE */
+.page{
+  display:none;
+  max-width:1000px;
+  margin:auto;
+  padding:30px;
+  animation:fade .5s;
+}
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.back{
+  cursor:pointer;
+  color:#38bdf8;
+  margin-bottom:20px;
+  display:inline-block;
+}
+.page h2{
+  color:#6ee7b7;
+  margin-bottom:15px;
+}
+.page p{
+  line-height:1.8;
+  font-size:15px;
+  color:#e5e7eb;
+}
+
+/* FOOTER */
+footer{
+  margin-top:60px;
+  padding:30px;
+  text-align:center;
+}
+.creator{
+  display:inline-block;
+  background:rgba(0,0,0,.4);
+  padding:16px 22px;
+  border-radius:16px;
+  font-size:14px;
+}
+.creator span{
+  display:block;
+  color:#6ee7b7;
+}
+
+/* ===== BUBBLE JUDUL ===== */
+
+header h1{
+display:inline-block;
+padding:18px 32px;
+border-radius:30px;
+background:linear-gradient(135deg,#38bdf8,#6ee7b7);
+color:#0f172a;
+box-shadow:0 0 25px rgba(56,189,248,.6);
+}
+
+/* Judul menu */
+.card h3{
+display:inline-block;
+padding:10px 18px;
+border-radius:18px;
+background:linear-gradient(135deg,#1e293b,#0f766e);
+color:#e5e7eb;
+box-shadow:0 0 12px rgba(56,189,248,.4);
+}
+
+/* Judul halaman */
+.page h2,
+.page h3{
+display:inline-block;
+padding:12px 22px;
+border-radius:22px;
+background:linear-gradient(135deg,#1e293b,#0f766e);
+color:#6ee7b7;
+box-shadow:0 0 12px rgba(110,231,183,.4);
+}
+</style>
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💼 Rahasia Pengusaha</h1>
+  <p>Materi bisnis, usaha & strategi nyata</p>
+</header>
+
+<!-- MENU -->
+<div id="menu">
+  
+  <div class="card" onclick="openPage('usaha')">
+    <i class="fa-solid fa-lightbulb"></i>
+    <h3>💡 Rahasia Buka Usaha</h3>
+  </div>
+
+  <div class="card" onclick="openPage('kelayakan')">
+    <i class="fa-solid fa-chart-line"></i>
+    <h3>📊 Kelayakan Usaha</h3>
+  </div>
+
+  <div class="card" onclick="openPage('proposal')">
+    <i class="fa-solid fa-file-invoice"></i>
+    <h3>📑 Proposal Kredit</h3>
+  </div>
+
+  <div class="card" onclick="openPage('bank')">
+    <i class="fa-solid fa-building-columns"></i>
+    <h3>🏦 Pengajuan ke Bank</h3>
+  </div>
+
+  <div class="card" onclick="openPage('pemasaran')">
+    <i class="fa-solid fa-bullhorn"></i>
+    <h3>📣 Strategi Pemasaran</h3>
+  </div>
+
+  <div class="card" onclick="openPage('promosi')">
+    <i class="fa-solid fa-rocket"></i>
+    <h3>🚀 Promosi Efektif</h3>
+  </div>
+
+  <div class="card" onclick="openPage('investasi')">
+    <i class="fa-solid fa-coins"></i>
+    <h3>💰 Investasi & Penghasilan</h3>
+  </div>
+
+</div>
+
+<!-- PAGE 1 -->
+<div class="page" id="usaha">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h1>💡 Rahasia Buka Usaha</h1>
+
+<p>
+Memulai usaha adalah keputusan besar yang membutuhkan keberanian, perencanaan, dan komitmen jangka panjang.
+Banyak orang gagal bukan karena mereka tidak pintar, tetapi karena mereka memulai tanpa pemahaman yang matang.
+Rahasia pertama dalam membuka usaha adalah mengenali masalah nyata di masyarakat. Usaha yang kuat selalu
+berangkat dari kebutuhan, bukan dari sekadar keinginan pemiliknya.
+</p>
+
+<p>
+Rahasia kedua adalah memulai dengan pola pikir pengusaha, bukan pekerja. Pengusaha tidak menunggu kondisi
+sempurna. Mereka memulai dari apa yang ada, sambil terus memperbaiki. Ketiga, pengusaha sukses selalu
+menghitung risiko, bukan menghindarinya. Risiko yang dihitung akan menghasilkan keputusan yang rasional.
+</p>
+
+<p>
+Keempat, penting untuk memahami siapa target pasar Anda secara spesifik. Banyak usaha gagal karena mencoba
+menjual ke semua orang. Kelima, tentukan nilai unik (unique value proposition) yang membedakan usaha Anda
+dari kompetitor. Keenam, jangan menunda pencatatan keuangan. Pembukuan sejak hari pertama adalah fondasi
+kesehatan bisnis.
+</p>
+
+<p>
+Ketujuh, pisahkan keuangan pribadi dan usaha. Kedelapan, bangun sistem, bukan hanya kerja keras. Sistem
+membuat usaha bisa berjalan tanpa ketergantungan pada satu orang. Kesembilan, fokus pada arus kas, bukan
+sekadar keuntungan di atas kertas.
+</p>
+
+<p>
+Kesepuluh, jaga kualitas produk dan layanan secara konsisten. Kesebelas, bangun relasi dan jaringan karena
+bisnis adalah permainan kepercayaan. Keduabelas, terus belajar dan beradaptasi dengan perubahan pasar.
+Ketigabelas, reinvestasi keuntungan untuk pertumbuhan. Keempatbelas, jaga integritas dan etika karena
+reputasi adalah aset jangka panjang.
+</p>
+
+<p>
+Membuka usaha bukan jalan instan menuju kekayaan. Ini adalah proses panjang yang menguji mental,
+kesabaran, dan disiplin. Namun dengan strategi yang tepat dan sikap yang benar, usaha dapat menjadi
+sarana kemandirian finansial dan kontribusi nyata bagi masyarakat.
+</p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="kelayakan">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h2>📊 Cara Menyusun Kelayakan Usaha </h2>
+
+<p>
+Studi kelayakan usaha adalah alat penting untuk menilai apakah sebuah ide bisnis layak dijalankan atau tidak.
+Tanpa studi kelayakan, pengusaha berjalan dalam ketidakpastian. Aspek pertama adalah analisis pasar, yang
+mencakup ukuran pasar, tren, perilaku konsumen, dan tingkat persaingan.
+</p>
+
+<p>
+Aspek kedua adalah analisis teknis dan operasional. Ini meliputi lokasi usaha, kebutuhan peralatan, proses
+produksi, serta sumber daya manusia. Aspek ketiga adalah analisis manajemen, yaitu kemampuan tim dalam
+mengelola usaha secara profesional.
+</p>
+
+<p>
+Aspek keempat adalah analisis hukum dan legalitas. Usaha harus memenuhi izin, peraturan, dan kewajiban
+perpajakan. Aspek kelima adalah analisis keuangan, yang mencakup kebutuhan modal, proyeksi laba rugi,
+arus kas, dan titik impas (break even point).
+</p>
+
+<p>
+Studi kelayakan membantu pengusaha mengantisipasi risiko, menarik investor, dan meningkatkan peluang
+keberhasilan. Usaha yang layak bukan hanya yang menguntungkan, tetapi juga berkelanjutan dan dapat
+beradaptasi dengan perubahan.
+</p>
+
+<p>
+Dengan menyusun kelayakan usaha secara sistematis, pengusaha tidak hanya bermodal keberanian, tetapi
+juga data dan perhitungan yang rasional. Ini adalah langkah penting sebelum melangkah lebih jauh.
+</p>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="proposal">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h2>📄 Cara Menyusun Proposal Kredit Usaha yang Benar</h2>
+
+<p>
+Proposal kredit usaha adalah dokumen resmi yang digunakan untuk meyakinkan pihak pemberi pinjaman
+bahwa usaha yang dijalankan layak dibiayai dan mampu mengembalikan pinjaman. Banyak pengajuan kredit
+ditolak bukan karena usahanya buruk, tetapi karena proposal disusun secara asal dan tidak sistematis.
+Proposal yang baik harus menjelaskan usaha secara jujur, logis, dan berbasis data.
+</p>
+
+<p>
+Bagian pertama proposal adalah profil usaha. Di dalamnya dijelaskan nama usaha, bidang usaha, lama
+berdiri, lokasi, serta visi dan misi. Profil usaha bertujuan memberikan gambaran umum kepada bank atau
+lembaga keuangan mengenai identitas dan arah bisnis. Profil yang jelas menunjukkan bahwa usaha
+dikelola secara serius dan bukan usaha sementara.
+</p>
+
+<p>
+Bagian kedua adalah latar belakang dan tujuan pengajuan kredit. Di bagian ini dijelaskan alasan
+mengapa dana diperlukan, apakah untuk modal kerja, pembelian alat, ekspansi usaha, atau kebutuhan
+lainnya. Tujuan harus spesifik dan realistis. Bank tidak menyukai tujuan yang terlalu umum atau
+bernuansa spekulatif.
+</p>
+
+<p>
+Bagian ketiga adalah deskripsi produk atau jasa. Jelaskan apa yang dijual, keunggulannya, serta siapa
+target pasarnya. Sertakan analisis pasar sederhana untuk menunjukkan bahwa usaha memiliki permintaan
+nyata. Semakin jelas pasar yang dituju, semakin tinggi kepercayaan pemberi kredit.
+</p>
+
+<p>
+Bagian keempat adalah rencana penggunaan dana. Ini adalah bagian yang sangat krusial. Dana yang
+dipinjam harus dirinci penggunaannya secara detail, misalnya berapa persen untuk bahan baku,
+peralatan, promosi, atau operasional. Rencana penggunaan dana yang rinci menunjukkan kedisiplinan
+pengelolaan keuangan.
+</p>
+
+<p>
+Bagian kelima adalah laporan keuangan. Idealnya meliputi laporan laba rugi, arus kas, dan neraca
+sederhana. Jika usaha masih kecil, pembukuan sederhana tetap lebih baik daripada tidak ada sama
+sekali. Laporan keuangan membuktikan bahwa usaha menghasilkan pendapatan dan mampu membayar cicilan.
+</p>
+
+<p>
+Bagian terakhir adalah penutup dan komitmen pembayaran. Tegaskan keseriusan dalam mengelola usaha dan
+komitmen untuk memenuhi kewajiban kredit. Proposal kredit yang baik bukan janji manis, tetapi rencana
+nyata yang masuk akal dan dapat dipertanggungjawabkan.
+</p>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="bank">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h2>🏦 Strategi & Proses Pengajuan Kredit ke Bank</h2>
+
+<p>
+Mengajukan kredit ke bank memerlukan persiapan matang. Bank pada dasarnya adalah lembaga pengelola
+risiko. Mereka harus memastikan bahwa dana yang dipinjamkan dapat kembali tepat waktu. Oleh karena
+itu, pengusaha harus memahami cara berpikir bank agar peluang persetujuan meningkat.
+</p>
+
+<p>
+Langkah pertama adalah memastikan legalitas usaha. Bank akan meminta dokumen seperti KTP, NPWP,
+izin usaha, dan rekening koran. Legalitas menunjukkan bahwa usaha dijalankan secara resmi dan taat
+aturan. Usaha informal tetap bisa mengajukan kredit, tetapi peluangnya lebih kecil.
+</p>
+
+<p>
+Langkah kedua adalah menyiapkan laporan keuangan yang rapi. Bank menilai kemampuan membayar dari arus
+kas, bukan dari ide usaha semata. Laporan keuangan yang stabil menunjukkan bahwa usaha mampu
+menghasilkan pendapatan secara konsisten.
+</p>
+
+<p>
+Langkah ketiga adalah memilih produk kredit yang sesuai. Setiap bank memiliki jenis kredit berbeda,
+seperti kredit modal kerja, kredit investasi, atau KUR. Memilih produk yang tepat akan memudahkan
+proses persetujuan dan meringankan beban cicilan.
+</p>
+
+<p>
+Langkah keempat adalah menjaga rekam jejak kredit. Riwayat pembayaran yang buruk akan menjadi
+hambatan besar. Disiplin membayar kewajiban sebelumnya adalah modal kepercayaan yang sangat penting.
+</p>
+
+<p>
+Setelah kredit disetujui, tanggung jawab tidak berhenti. Pengusaha harus menggunakan dana sesuai
+rencana dan membayar cicilan tepat waktu. Kredit bank bukan solusi instan, tetapi alat bantu untuk
+mempercepat pertumbuhan usaha jika digunakan dengan bijak.
+</p>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="pemasaran">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h2>📣 Kiat & Kesalahan dalam Pemasaran Usaha</h2>
+
+<p>
+Pemasaran merupakan jantung dari sebuah usaha. Produk sebaik apa pun tidak akan menghasilkan
+penjualan jika tidak dipasarkan dengan benar. Banyak pelaku usaha kecil menengah gagal berkembang
+karena menganggap pemasaran hanya sebatas promosi. Padahal, pemasaran adalah proses menyeluruh
+yang dimulai dari memahami konsumen hingga membangun hubungan jangka panjang.
+</p>
+
+<p>
+Kiat pertama dalam pemasaran adalah memahami target pasar secara spesifik. Usaha yang menargetkan
+semua orang pada akhirnya tidak benar-benar menjangkau siapa pun. Segmentasi pasar berdasarkan usia,
+kebutuhan, daya beli, dan perilaku sangat penting untuk menentukan strategi yang tepat.
+</p>
+
+<p>
+Kiat kedua adalah membangun brand yang konsisten. Brand bukan hanya logo, tetapi juga pesan,
+nilai, dan pengalaman yang dirasakan pelanggan. Konsistensi dalam tampilan, komunikasi, dan
+pelayanan akan membangun kepercayaan.
+</p>
+
+<p>
+Kiat ketiga adalah mendengarkan pelanggan. Masukan, kritik, dan keluhan adalah sumber data berharga
+untuk perbaikan. Usaha yang berkembang adalah usaha yang mau beradaptasi.
+</p>
+
+<p>
+Kesalahan pemasaran yang sering terjadi adalah terlalu fokus pada penjualan jangka pendek.
+Diskon besar-besaran tanpa strategi hanya akan merusak margin keuntungan. Kesalahan lain adalah
+meniru kompetitor tanpa memahami keunggulan sendiri.
+</p>
+
+<p>
+Kesalahan berikutnya adalah tidak mengukur hasil pemasaran. Tanpa evaluasi, pengusaha tidak tahu
+strategi mana yang efektif dan mana yang membuang biaya. Pemasaran yang baik selalu berbasis data.
+</p>
+
+<p>
+Pemasaran yang tepat bukan soal siapa yang paling keras berpromosi, tetapi siapa yang paling
+memahami konsumennya. Dengan strategi yang terarah dan evaluasi berkelanjutan, pemasaran menjadi
+alat pertumbuhan yang kuat.
+</p>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="promosi">
+<span class="back" onclick="goHome()">← Kembali</span>
+<h2>🚀 Strategi Promosi Efektif di Era Modern</h2>
+
+<p>
+Promosi adalah bagian dari pemasaran yang bertujuan meningkatkan kesadaran dan minat konsumen
+terhadap produk atau jasa. Di era digital, promosi tidak lagi bergantung pada media konvensional.
+Teknologi membuka banyak peluang baru yang lebih terukur dan efisien.
+</p>
+
+<p>
+Strategi promosi pertama adalah memanfaatkan media digital seperti media sosial, website, dan
+platform pesan. Konten yang relevan dan konsisten akan membangun audiens secara bertahap.
+Promosi yang efektif bukan spam, tetapi komunikasi yang bernilai.
+</p>
+
+<p>
+Strategi kedua adalah menggunakan pendekatan edukatif. Konsumen modern lebih tertarik pada
+konten yang memberi solusi, bukan sekadar iklan. Edukasi membangun kepercayaan dan otoritas.
+</p>
+
+<p>
+Strategi ketiga adalah memanfaatkan testimoni dan bukti sosial. Ulasan pelanggan, studi kasus,
+dan rekomendasi memiliki pengaruh besar terhadap keputusan pembelian.
+</p>
+
+<p>
+Strategi keempat adalah promosi berbasis data. Gunakan analitik untuk memahami perilaku audiens
+dan menyesuaikan pesan. Promosi yang terukur lebih hemat biaya dan tepat sasaran.
+</p>
+
+<p>
+Promosi yang efektif tidak harus mahal. Yang terpenting adalah konsistensi, kejelasan pesan,
+dan pemahaman terhadap kebutuhan pasar. Dengan strategi yang tepat, promosi menjadi investasi,
+bukan beban biaya.
+</p>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="investasi">
+<span class="back" onclick="goHome()">← Kembali</span>
+
+<h2>💰 Investasi & Penghasilan Ekstra untuk Pengusaha Modern</h2>
+
+<p>
+Investasi dan penghasilan ekstra merupakan dua konsep yang sangat penting bagi pengusaha modern.
+Banyak orang bekerja keras sepanjang hidupnya, namun tetap kesulitan secara finansial karena hanya
+mengandalkan satu sumber pendapatan. Pengusaha yang cerdas memahami bahwa uang harus bekerja,
+bukan hanya manusia yang bekerja untuk uang.
+</p>
+
+<p>
+Investasi secara sederhana adalah menempatkan dana, waktu, atau sumber daya ke dalam suatu aset
+dengan harapan mendapatkan keuntungan di masa depan. Namun, investasi bukan sekadar menaruh uang
+dan menunggu hasil. Investasi membutuhkan pemahaman, perencanaan, serta kesadaran akan risiko.
+Kesalahan terbesar pemula adalah tergiur imbal hasil tinggi tanpa memahami mekanisme di baliknya.
+</p>
+
+<p>
+Langkah pertama dalam berinvestasi adalah mengenali tujuan keuangan. Apakah investasi ditujukan
+untuk dana darurat, pendidikan, pensiun, atau pengembangan usaha? Tujuan akan menentukan jenis
+investasi yang tepat. Investasi jangka pendek berbeda karakteristiknya dengan investasi jangka
+panjang.
+</p>
+
+<p>
+Langkah kedua adalah memahami profil risiko. Setiap individu memiliki toleransi risiko yang berbeda.
+Ada yang nyaman dengan fluktuasi tinggi, ada pula yang lebih memilih stabilitas. Memaksakan diri
+berinvestasi di instrumen berisiko tinggi tanpa kesiapan mental sering berujung pada kerugian dan
+keputusan emosional.
+</p>
+
+<p>
+Jenis investasi sangat beragam, mulai dari yang tradisional hingga modern. Investasi riil seperti
+usaha, properti, dan emas telah dikenal sejak lama. Sementara investasi keuangan seperti saham,
+reksa dana, dan obligasi menawarkan kemudahan akses melalui teknologi. Masing-masing memiliki
+kelebihan dan kekurangan.
+</p>
+
+<p>
+Bagi pengusaha, investasi terbaik sering kali adalah mengembangkan usaha itu sendiri. Reinvestasi
+keuntungan untuk memperluas kapasitas, meningkatkan kualitas, atau memperkuat pemasaran dapat
+memberikan hasil yang signifikan. Namun, diversifikasi tetap penting untuk mengurangi risiko.
+</p>
+
+<p>
+Selain investasi, penghasilan ekstra menjadi strategi penting untuk meningkatkan stabilitas
+keuangan. Penghasilan ekstra bukan berarti bekerja tanpa henti, melainkan menciptakan sumber
+pendapatan tambahan yang efisien. Contohnya adalah bisnis sampingan berbasis keahlian, penjualan
+produk digital, atau kemitraan usaha.
+</p>
+
+<p>
+Di era digital, peluang penghasilan ekstra semakin terbuka. Internet memungkinkan seseorang
+menjangkau pasar luas dengan modal relatif kecil. Namun, prinsip dasarnya tetap sama: penghasilan
+ekstra yang berkelanjutan dibangun dari nilai yang diberikan, bukan dari skema instan.
+</p>
+
+<p>
+Kesalahan umum dalam mengejar penghasilan ekstra adalah terjebak pada janji keuntungan cepat.
+Skema yang menjanjikan hasil besar tanpa usaha hampir selalu berakhir dengan kerugian. Pengusaha
+yang bijak selalu melakukan analisis, bertanya kritis, dan memahami alur bisnis sebelum terlibat.
+</p>
+
+<p>
+Manajemen keuangan menjadi kunci agar investasi dan penghasilan ekstra benar-benar berdampak.
+Tanpa pengelolaan yang baik, tambahan pendapatan akan habis tanpa memberikan manfaat jangka panjang.
+Pengusaha perlu membedakan antara konsumsi dan investasi, serta disiplin dalam mengalokasikan dana.
+</p>
+
+<p>
+Penting juga untuk terus meningkatkan literasi keuangan. Dunia investasi dan bisnis selalu
+berkembang. Instrumen baru, regulasi baru, dan teknologi baru menuntut pengusaha untuk terus
+belajar. Pengetahuan adalah perlindungan terbaik dari risiko yang tidak perlu.
+</p>
+
+<p>
+Pada akhirnya, investasi dan penghasilan ekstra bukan tujuan akhir, melainkan alat untuk mencapai
+kebebasan finansial dan ketenangan hidup. Dengan strategi yang tepat, disiplin, dan etika yang
+baik, pengusaha dapat membangun masa depan yang lebih aman dan berkelanjutan.
+</p>
+
+<p>
+Kesuksesan finansial tidak datang dalam semalam. Ia adalah hasil dari keputusan kecil yang benar,
+diambil secara konsisten dalam jangka panjang. Pengusaha yang memahami ini tidak tergesa-gesa,
+tetapi melangkah dengan keyakinan dan perhitungan matang.
+</p>
+</div>
+
+<!-- ================= KOMENTAR & VIEW ================= -->
+
+<style>
+#commentSection{
+max-width:700px;
+margin:60px auto;
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:18px;
+}
+
+#commentSection h2{
+text-align:center;
+color:#6ee7b7;
+margin-bottom:10px;
+}
+
+#viewsBox{
+text-align:center;
+color:#38bdf8;
+margin-bottom:20px;
+}
+
+#usernameInput,
+#commentInput{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:none;
+margin-bottom:10px;
+background:rgba(0,0,0,.4);
+color:white;
+}
+
+#sendBtn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#38bdf8,#6ee7b7);
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+#commentList{
+margin-top:25px;
+}
+
+.commentBubble{
+background:rgba(56,189,248,.15);
+border-left:4px solid #38bdf8;
+padding:14px;
+border-radius:12px;
+margin-bottom:12px;
+animation:fadeUp .3s;
+}
+
+.commentBubble b{
+color:#6ee7b7;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(10px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+
+<div id="commentSection">
+<h2>💬 Komentar Pengunjung</h2>
+
+<div id="viewsBox">
+👁 Dilihat <span id="viewCount">0</span> kali
+</div>
+
+<input id="usernameInput" type="text" placeholder="Username...">
+
+<textarea id="commentInput" placeholder="Tulis komentar..."></textarea>
+
+<button id="sendBtn">Kirim Komentar</button>
+
+<div id="commentList"></div>
+</div>
+
+<script>
+let comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+function renderComments(){
+commentList.innerHTML="";
+comments.forEach(c=>{
+commentList.innerHTML+=`
+<div class="commentBubble">
+<b>${c.name}</b><br>
+${c.text}
+</div>
+`;
+});
+}
+
+renderComments();
+
+sendBtn.onclick = ()=>{
+const name = usernameInput.value.trim();
+const text = commentInput.value.trim();
+
+if(name=="" || text==""){
+alert("Isi username & komentar!");
+return;
+}
+
+comments.push({name,text});
+localStorage.setItem("comments",JSON.stringify(comments));
+
+usernameInput.value="";
+commentInput.value="";
+renderComments();
+}
+
+// VIEW COUNTER
+let views = localStorage.getItem("views") || 0;
+views++;
+localStorage.setItem("views",views);
+viewCount.innerText = views;
+</script>
+
+<!-- ============== END KOMENTAR & VIEW ============== -->
+
+<!-- ================= DONASI & SALURAN ================= -->
+
+<style>
+#donateBox{
+max-width:700px;
+margin:40px auto;
+background:rgba(56,189,248,.12);
+padding:25px;
+border-radius:22px;
+text-align:center;
+box-shadow:0 0 25px rgba(56,189,248,.3);
+}
+
+#donateBox h2{
+color:#6ee7b7;
+margin-bottom:10px;
+}
+
+#donateImage{
+width:160px;
+margin:15px auto;
+display:block;
+border-radius:16px;
+box-shadow:0 0 20px rgba(110,231,183,.6);
+}
+
+.donateBubble{
+background:rgba(15,61,46,.8);
+padding:14px;
+border-radius:14px;
+margin-bottom:12px;
+border-left:4px solid #6ee7b7;
+color:#e5e7eb;
+}
+
+/* Bubble Info */
+#infoBubble{
+background:rgba(110,231,183,.15);
+padding:18px;
+border-radius:18px;
+margin-top:20px;
+}
+
+#infoImage{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 0 20px rgba(56,189,248,.7);
+margin-bottom:10px;
+}
+
+#infoText{
+color:#6ee7b7;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+#channelLink{
+display:inline-block;
+padding:12px 22px;
+border-radius:30px;
+background:linear-gradient(135deg,#6ee7b7,#38bdf8);
+color:black;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 0 20px rgba(110,231,183,.6);
+}
+</style>
+
+<div id="donateBox">
+
+<h2>💖 Donasi Untuk Zson</h2>
+
+<img id="donateImage"
+src="https://i.ibb.co/5rXKXWg/donate.png">
+
+<div class="donateBubble">
+Jika kamu merasa website ini bermanfaat,<br>
+kamu bisa berdonasi ke nomor:
+<br><br>
+<b>📱 085971864447</b>
+</div>
+
+<div class="donateBubble">
+Dukungan kamu bikin Zson makin semangat
+buat update & berbagi konten bermanfaat 🙏
+</div>
+
+<!-- INFO LANJUTAN -->
+<div id="infoBubble">
+
+<img id="infoImage"
+src="https://i.imgur.com/0KFBHTB.png">
+
+<div id="infoText">Info lanjutan ada di sini</div>
+
+<a id="channelLink"
+href="https://whatsapp.com/channel/0029Vb7R0VH545uxYubc5l1L"
+target="_blank">
+Masuk Saluran WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<!-- ================= END DONASI ================= -->
+
+<!-- ================= HALAMAN PENGATURAN ================= -->
+
+<style>
+#settingIcon{
+width:55px;
+height:55px;
+border-radius:50%;
+background:linear-gradient(135deg,#38bdf8,#6ee7b7);
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+margin:40px auto;
+font-size:26px;
+box-shadow:0 0 20px rgba(56,189,248,.6);
+}
+
+#settingPage{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(135deg,#0f3d2e,#0a2540);
+z-index:9999;
+display:none;
+overflow-y:auto;
+padding:30px;
+}
+
+#closeSetting{
+font-size:28px;
+cursor:pointer;
+color:#6ee7b7;
+margin-bottom:20px;
+display:inline-block;
+}
+
+#settingPage h2{
+text-align:center;
+color:#6ee7b7;
+}
+
+.colorButtons{
+text-align:center;
+margin:20px 0;
+}
+
+.colorButtons button{
+padding:12px 20px;
+margin:6px;
+border:none;
+border-radius:14px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.btnWhite{background:white;color:black;}
+.btnBlue{background:#0a2540;color:white;}
+.btnPurple{background:#4c1d95;color:white;}
+
+#settingLogo{
+width:140px;
+height:140px;
+border-radius:50%;
+display:block;
+margin:20px auto;
+object-fit:cover;
+box-shadow:0 0 25px rgba(56,189,248,.7);
+}
+
+#aboutText{
+max-width:800px;
+margin:30px auto;
+line-height:1.8;
+background:rgba(0,0,0,.4);
+padding:20px;
+border-radius:18px;
+color:#e5e7eb;
+}
+</style>
+
+<!-- ICON PENGATURAN -->
+<div id="settingIcon" onclick="openSetting()">⚙️</div>
+
+<!-- HALAMAN PENGATURAN -->
+<div id="settingPage">
+
+<div id="closeSetting" onclick="closeSetting()">✖</div>
+
+<h2>⚙️ Pengaturan Website</h2>
+
+<div class="colorButtons">
+<button class="btnWhite" onclick="setBg('white')">Putih</button>
+<button class="btnBlue" onclick="setBg('blue')">Biru</button>
+<button class="btnPurple" onclick="setBg('purple')">Ungu</button>
+</div>
+
+<h2>Tentang Website</h2>
+
+<img src="zson.png" id="settingLogo">
+
+<div id="aboutText">
+Website Rahasia Pengusaha dibuat sebagai media edukasi yang bertujuan membantu siapa saja yang ingin memulai, mengembangkan, dan mempertahankan usaha secara mandiri. Ide pembuatan website ini berawal dari kepedulian Zson terhadap banyaknya calon pengusaha pemula yang memiliki semangat tinggi, namun sering kali kebingungan harus memulai dari mana. Tidak sedikit orang yang ingin berbisnis, tetapi terhambat oleh keterbatasan informasi, ketakutan akan risiko, serta minimnya panduan praktis yang mudah dipahami.
+
+Zson memulai pengembangan website ini dengan konsep sederhana, yaitu menyajikan materi bisnis yang ringkas, jelas, dan langsung dapat diterapkan. Setiap konten disusun berdasarkan prinsip bahwa bisnis bukan hanya soal teori, tetapi tentang eksekusi, konsistensi, dan pembelajaran berkelanjutan. Oleh karena itu, materi yang disajikan tidak hanya berfokus pada cara membuka usaha, tetapi juga mencakup kelayakan usaha, penyusunan proposal kredit, strategi pengajuan ke bank, pemasaran, promosi, hingga pengelolaan investasi dan penghasilan tambahan.
+
+Dalam proses pembuatannya, Zson merancang website ini menggunakan teknologi web dasar agar ringan, cepat diakses, dan mudah dikembangkan di masa depan. Desain visual dipilih dengan nuansa gelap yang modern untuk memberikan kenyamanan membaca serta kesan profesional. Selain itu, fitur-fitur interaktif seperti komentar, view counter, donasi, dan pengaturan tampilan ditambahkan agar pengunjung dapat berinteraksi secara langsung dan merasa menjadi bagian dari ekosistem website ini.
+
+Website ini tidak dibuat sebagai sarana pamer keberhasilan, melainkan sebagai wadah berbagi perjalanan, pembelajaran, dan pengalaman. Zson percaya bahwa kesuksesan dalam bisnis bukan hanya milik segelintir orang, tetapi dapat diraih oleh siapa saja yang mau belajar, mencoba, dan bertahan. Melalui website ini, Zson berharap dapat menumbuhkan semangat kewirausahaan, membangun mental tangguh, serta mendorong lahirnya lebih banyak pengusaha mandiri di Indonesia.
+
+Ke depan, website Rahasia Pengusaha akan terus dikembangkan dengan menambahkan materi baru, memperbaiki tampilan, serta meningkatkan kualitas fitur agar semakin bermanfaat. Setiap masukan dari pengunjung sangat berarti dan menjadi bahan evaluasi untuk pengembangan selanjutnya. Dengan dukungan dan partisipasi bersama, website ini diharapkan dapat menjadi sumber referensi yang terpercaya dan inspiratif bagi para calon maupun pelaku usaha.
+</div>
+
+</div>
+
+<script>
+function openSetting(){
+document.getElementById("settingPage").style.display="block";
+}
+
+function closeSetting(){
+document.getElementById("settingPage").style.display="none";
+}
+
+function setBg(color){
+if(color=="white"){
+document.body.style.background="white";
+document.body.style.color="black";
+}
+if(color=="blue"){
+document.body.style.background="linear-gradient(135deg,#0f3d2e,#0a2540)";
+document.body.style.color="#f8fafc";
+}
+if(color=="purple"){
+document.body.style.background="linear-gradient(135deg,#2e1065,#4c1d95)";
+document.body.style.color="#f8fafc";
+}
+localStorage.setItem("bgColor",color);
+}
+
+const savedBg=localStorage.getItem("bgColor");
+if(savedBg){
+setBg(savedBg);
+}
+</script>
+
+<!-- ================= END PENGATURAN ================= -->
+
+<footer>
+  <div class="creator">
+    <span>✨ sona</span>
+    <span>📧 sonaganteeng@gmail.com</span>
+  </div>
+</footer>
+
+<script>
+function openPage(id){
+  document.getElementById("menu").style.display="none";
+  document.querySelectorAll(".page").forEach(p=>{
+    p.style.display="none";
+  });
+
+  document.getElementById(id).style.display="block";
+}
+
+function goHome(){
+  document.getElementById("menu").style.display="grid";
+  document.querySelectorAll(".page").forEach(p=>{
+    p.style.display="none";
+  });
+}
+</script>
+
+</body>
+</html>
