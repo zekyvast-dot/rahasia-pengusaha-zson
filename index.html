@@ -619,44 +619,103 @@ to{opacity:1;transform:translateY(0)}
 </div>
 
 <script>
-let comments = JSON.parse(localStorage.getItem("comments")) || [];
+<!-- FIREBASE -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
-function renderComments(){
-commentList.innerHTML="";
-comments.forEach(c=>{
-commentList.innerHTML+=`
-<div class="commentBubble">
-<b>${c.name}</b><br>
-${c.text}
-</div>
-`;
-});
-}
+<script>
+// CONFIG PUNYA KAMU
+const firebaseConfig = {
+  apiKey: "AIzaSyCZIy1XaGP9twBfdIULK_QrSBmmtilcrqU",
+  authDomain: "zson-92f73.firebaseapp.com",
+  databaseURL: "https://zson-92f73-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "zson-92f73",
+  storageBucket: "zson-92f73.firebasestorage.app",
+  messagingSenderId: "1069149678731",
+  appId: "1:1069149678731:web:4d6a7c4efffe809324788e"
+};
 
-renderComments();
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
 
+// =========================
+// KIRIM KOMENTAR
 sendBtn.onclick = ()=>{
-const name = usernameInput.value.trim();
-const text = commentInput.value.trim();
+  const name = usernameInput.value.trim();
+  const text = commentInput.value.trim();
 
-if(name=="" || text==""){
-alert("Isi username & komentar!");
-return;
+  if(name=="" || text==""){
+    alert("Isi username & komentar!");
+    return;
+  }
+
+  db.ref("comments").push({
+    name:name,
+    text:text,
+    parent:null,
+    time:Date.now()
+  });
+
+  commentInput.value="";
+};
+
+// =========================
+// LOAD KOMENTAR + BALASAN
+db.ref("comments").on("value", snap=>{
+  commentList.innerHTML="";
+  const data = snap.val();
+  if(!data) return;
+
+  const arr=[];
+  for(let id in data){
+    arr.push({id,...data[id]});
+  }
+
+  arr.sort((a,b)=>a.time-b.time);
+
+  arr.forEach(c=>{
+    if(c.parent===null){
+      tampilkan(c,arr,0);
+    }
+  });
+});
+
+function tampilkan(c,arr,level){
+  const div=document.createElement("div");
+  div.className="commentBubble";
+  div.style.marginLeft=(level*20)+"px";
+
+  div.innerHTML=`
+   <b>${c.name}</b><br>
+   ${c.text}<br>
+   <a href="#" onclick="balas('${c.id}')">Balas</a>
+  `;
+
+  commentList.appendChild(div);
+
+  arr.forEach(r=>{
+    if(r.parent===c.id){
+      tampilkan(r,arr,level+1);
+    }
+  });
 }
 
-comments.push({name,text});
-localStorage.setItem("comments",JSON.stringify(comments));
+function balas(id){
+  const name=usernameInput.value.trim();
+  const text=prompt("Tulis balasan:");
 
-usernameInput.value="";
-commentInput.value="";
-renderComments();
+  if(!name || !text){
+    alert("Isi username dulu + balasan!");
+    return;
+  }
+
+  db.ref("comments").push({
+    name:name,
+    text:text,
+    parent:id,
+    time:Date.now()
+  });
 }
-
-// VIEW COUNTER
-let views = localStorage.getItem("views") || 0;
-views++;
-localStorage.setItem("views",views);
-viewCount.innerText = views;
 </script>
 
 <!-- ============== END KOMENTAR & VIEW ============== -->
